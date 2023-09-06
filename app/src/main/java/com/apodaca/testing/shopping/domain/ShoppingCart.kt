@@ -1,4 +1,4 @@
-package com.plcoding.testingcourse.shopping.domain
+package com.apodaca.testing.shopping.domain
 
 
 class ShoppingCart {

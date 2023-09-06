@@ -1,10 +1,10 @@
-package com.plcoding.testingcourse.shopping.data
+package com.apodaca.testing.shopping.data
 
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.plcoding.testingcourse.shopping.domain.Product
-import com.plcoding.testingcourseexamples.part1.domain.ShoppingCartCache
+import com.apodaca.testing.shopping.domain.Product
+import com.apodaca.testing.shopping.domain.ShoppingCartCache
 
 class ShoppingCartCacheImpl(
     private val sharedPreferences: SharedPreferences
