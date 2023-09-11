@@ -2,6 +2,8 @@ package com.apodaca.testing.core.domain
 
 import assertk.assertFailure
 import assertk.assertThat
+import assertk.assertions.contains
+import assertk.assertions.hasSize
 import assertk.assertions.isEqualTo
 import com.apodaca.testing.core.data.ShoppingCartCacheFake
 import org.junit.jupiter.api.Assertions.*
@@ -22,6 +24,17 @@ internal class ShoppingCartTest {
         cart = ShoppingCart(cacheFake)
     }
 
+    @Test
+    fun `Test products are saved in cache`() {
+        val product = Product(id = 1, name = "Ice cream", price = 5.0)
+
+        cart.addProduct(product, 2)
+
+        val productsFromCache = cacheFake.loadCart()
+
+        assertThat(productsFromCache).hasSize(2)
+        assertThat(productsFromCache).contains(product)
+    }
     @ParameterizedTest
     @CsvSource(
         "3,15.0",
